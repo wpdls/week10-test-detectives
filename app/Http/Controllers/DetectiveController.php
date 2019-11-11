@@ -36,7 +36,7 @@ class DetectiveController extends Controller
     }
 
     public function store(Request $request) {
-        $crime = Crime::create($request->all());
+        $crime = Crime::create($request->except(['_token']));
 
         return redirect(action('DetectiveController@index'));
     }

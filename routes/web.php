@@ -24,3 +24,4 @@ Route::get('/', function () {
 Route::get('/detective/{detective_slug}', 'DetectiveController@show');
 
 Route::get('/detectives', 'DetectiveController@index');
+Route::resource('/detective', 'DetectiveController');
