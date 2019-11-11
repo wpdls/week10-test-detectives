@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Crime extends Model
 {
 
-    protected $fillable = ['crime', 'description'];
+    protected $fillable = ['subject', 'description'];
 
     public function detective () 
     {
-        return $this->belongsTo('App\Detective');
+        return $this->belongsTo('App\Detective', 'detective_id');
     }
 }
