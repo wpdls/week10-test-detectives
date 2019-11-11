@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Detective;
+use App\Crime;
 
 class DetectiveController extends Controller
 {
@@ -18,5 +20,24 @@ class DetectiveController extends Controller
         $view = view('detective/show');
         $view->detective = $detective;
         return $view;
+    }
+
+    public function index() {
+        
+        $detectives = Detective::orderBy('name', 'asc')->get();
+        
+        return view('detective/index', compact('detectives'));
+    }
+
+    public function create() {
+        $crime = new Crime;
+
+        return view('detective/show', compact('crimes'));
+    }
+
+    public function store(Request $request) {
+        $crime = Crime::create($request->all());
+
+        return redirect(action('DetectiveController@index'));
     }
 }

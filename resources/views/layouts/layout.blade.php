@@ -8,11 +8,12 @@
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
     
     {{-- load the stylesheet --}}
+    <link rel="stylesheet" href="../../sass/main.scss">
 </head>
 <body>
 
     <nav class="menu">
-        <a href="#">Home</a>
+    <a href="{{ route('index') }}">Home</a>
         @guest
             <a href="{{ route('login') }}">Login</a>
             <a href="{{ route('register') }}">Register</a>
