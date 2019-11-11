@@ -11,6 +11,6 @@ class Crime extends Model
 
     public function detective () 
     {
-        return $this->belongsTo('App\Detective', 'detective_id');
+        return $this->belongsTo('App\Detective');
     }
 }
